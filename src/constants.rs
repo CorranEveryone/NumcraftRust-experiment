@@ -110,6 +110,7 @@ pub enum BlockType {
     Log = 7,
     Leaves = 8,
     Planks = 9,
+    Test = 10,
 }
 
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Serialize, Deserialize)]
@@ -126,6 +127,7 @@ pub enum ItemType {
     LogBlock = 7,
     LeavesBlock = 8,
     PlanksBlock = 9,
+    TestBlock = 10,
 }
 
 impl ItemType {
@@ -142,6 +144,7 @@ impl ItemType {
             ItemType::LogBlock => 8,
             ItemType::LeavesBlock => 9,
             ItemType::PlanksBlock => 10,
+            ItemType::TestBlock => 11,
         }
     }
 
@@ -158,6 +161,7 @@ impl ItemType {
             7 => Some(ItemType::LogBlock),
             8 => Some(ItemType::LeavesBlock),
             9 => Some(ItemType::PlanksBlock),
+            10 => Some(ItemType::TestBlock),
             _ => None,
         }
     }
@@ -174,6 +178,7 @@ impl ItemType {
             ItemType::LogBlock => 64,
             ItemType::LeavesBlock => 64,
             ItemType::PlanksBlock => 64,
+            ItemType::TestBlock => 69,
         }
     }
 
@@ -189,6 +194,7 @@ impl ItemType {
             ItemType::LogBlock => Some(BlockType::Log),
             ItemType::LeavesBlock => Some(BlockType::Leaves),
             ItemType::PlanksBlock => Some(BlockType::Planks),
+            ItemType::TestBlock => Some(BlockType::Test),
         }
     }
 }
@@ -216,6 +222,7 @@ impl BlockType {
             BlockType::Log => 8,
             BlockType::Leaves => 9,
             BlockType::Planks => 10,
+            BlockType::Test => 11,
         }
     }
 
@@ -231,6 +238,7 @@ impl BlockType {
             7 => Some(BlockType::Log),
             8 => Some(BlockType::Leaves),
             9 => Some(BlockType::Planks),
+            10 => Some(BlockType::Test),
             _ => None,
         }
     }
@@ -247,6 +255,7 @@ impl BlockType {
             BlockType::Log => 1.5,
             BlockType::Leaves => 0.3,
             BlockType::Planks => 1.2,
+            BlockType::Test => 0.1,
         }
     }
 
@@ -262,6 +271,7 @@ impl BlockType {
             BlockType::Log => ItemType::LogBlock,
             BlockType::Leaves => ItemType::LeavesBlock,
             BlockType::Planks => ItemType::PlanksBlock,
+            BlockType::Test => ItemType::TestBlock,
         }
     }
 }
@@ -277,6 +287,7 @@ pub fn get_quad_color_from_texture_id(id: u8) -> Color565 {
         8 => Color565::from_rgb888(79, 53, 30),
         9 => Color565::from_rgb888(36, 75, 37),
         10 => Color565::from_rgb888(152, 124, 61),
+        11 => Color565::from_rgb888(205, 43, 217),
 
         _ => Color565::from_rgb888(0, 0, 0),
         // 255 is reserved for block outline

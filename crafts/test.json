@@ -1,0 +1,14 @@
+{
+    "name": "test",
+    "pattern" : [
+        "x  ",
+        "   ",
+        "   "
+    ],
+    "strict_shape": false,
+    "palette": {
+        "x": 9
+    },
+    "result": 10,
+    "result_amount": 4
+}
